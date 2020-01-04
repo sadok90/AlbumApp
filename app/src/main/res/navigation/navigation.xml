@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/albumList">
+
+    <fragment
+        android:id="@+id/albumList"
+        android:name="com.example.sadok.album.ui.AlbumListFragment"
+        android:label="album_list_fragment"
+        tools:layout="@layout/album_list_fragment" >
+        <action
+            android:id="@+id/action_albumList_to_albumDetail"
+            app:destination="@id/albumDetail" />
+        <argument
+            android:name="albumID"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/albumDetail"
+        android:name="com.example.sadok.album.ui.AlbumDetailFragment"
+        android:label="album_detail_fragment"
+        tools:layout="@layout/album_detail_fragment" >
+        <action
+            android:id="@+id/action_albumDetail_to_albumList"
+            app:destination="@id/albumList" />
+    </fragment>
+</navigation>
